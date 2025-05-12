@@ -97,6 +97,45 @@
             top: 0;
             left: 0;
         }
+        .dimmed {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .overlay-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .overlay-container img.dimmed {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 4px 8px;
+            font-size: 0.8em;
+            text-align: center;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .overlay-container img.dimmed + .overlay-text {
+            opacity: 1;
+        }
+
+        #demo-video {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -232,40 +271,60 @@
         <div class="col-md-2"></div>
     </div>
 
+    <div class="row mb-2">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+          <label for="viewSelect">Camera View:</label>
+          <select id="viewSelect" class="form-control" onchange="updateConfigOptions()">
+            <option value="head">Head</option>
+            <option value="head_wrist">Head + Wrist</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="labelSelect">Label Frame:</label>
+          <select id="labelSelect" class="form-control" onchange="updateConfigOptions()">
+            <option value="world">World</option>
+            <option value="wrist">Wrist</option>
+            <option value="aligned">Aligned Wrist</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="resultSelect">Result:</label>
+          <select id="resultSelect" class="form-control">
+            <option value="success">Success</option>
+            <option value="fail">Failure</option>
+          </select>
+        </div>
+        <div class="col-md-4"></div>
+    </div>      
     <div class="row" id="demo">
     <div class="col-md-1"></div>
     <div class="col-md-10 col-xs-12">
-        <div class="row">
+        <div class="row" id="demo-thumbnails">
             <div class="col-md-2 col-sm-2 col-xs-2 px-1">
-                <img src="videos/close_case.png" width="100%"
-                    alt="5s"
-                    onclick="populateDemo(this);">
+                <img src="videos/close_case.png" width="100%" alt="5s" onclick="populateDemo(this);">
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2 px-1">
-                <img src="videos/open_case.png" width="100%"
-                    alt="6s"
-                    onclick="populateDemo(this);">
+                <img src="videos/open_case.png" width="100%" alt="6s" onclick="populateDemo(this);">
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2 px-1">
-                <img src="videos/push_bottle.png" width="100%"
-                    alt="4s"
-                    onclick="populateDemo(this);">
+                <img src="videos/push_bottle.png" width="100%" alt="4s" onclick="populateDemo(this);">
             </div>
             <div class="col-md-2 col-sm-2 col-xs-2 px-1">
-                <img src="videos/push_chair.png" width="100%"
-                    alt="4s"
-                    onclick="populateDemo(this);">
+                <img src="videos/push_chair.png" width="100%" alt="4s" onclick="populateDemo(this);">
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 px-1">
-                <img src="videos/humanoid_empty_chair.png" width="100%" 
-                    alt="2s"
-                    onclick="populateDemo(this);">
+            <div class="col-md-2 col-sm-2 col-xs-2 px-1 position-relative">
+                <div class="overlay-container">
+                    <img id="humanoid_empty" src="videos/humanoid_empty_chair.png" width="100%" alt="2s" onclick="populateDemo(this);">
+                    <div class="overlay-text">Unavailable in this view</div>
+                </div>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-2 px-1">
-                <img src="videos/humanoid_heavy_chair.png" width="100%"
-                    alt="4s"
-                    onclick="populateDemo(this);">
-            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 px-1 position-relative">
+                <div class="overlay-container">
+                    <img id="humanoid_heavy" src="videos/humanoid_heavy_chair.png" width="100%" alt="4s" onclick="populateDemo(this);">
+                    <div class="overlay-text">Unavailable in this view</div>
+                </div>
+            </div>            
         </div>
         <p></p>
         <div class="row border rounded" style="padding-top:10px; padding-bottom:10px;">
@@ -276,10 +335,26 @@
         
             </div>
             <div class="col-md-6">
-                <div id="imgtext">Prompt text in gray.</div>
-                <div>
-                    <pre><code class="language-python" id="answer">Spatial and physical reasoning shown within code block.</code></pre>
+                <div class="row">
+                    <div class="col">
+                        <img id="input_image" src="" height="10%">
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <pre><code class="language-python" id="spatial">Spatial reasoning</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <pre><code class="language-python" id="physical">Physical reasoning</code></pre>
+                        </div>    
+                    </div>
+                </div>
+
             </div>
         </div>
         <p></p>
@@ -501,60 +576,131 @@
 </body>
 
 <script>
-    function populateDemo_jaf(imgs) {
-        // delete video with id demo-video
-        var placeholder = document.getElementById('placeholder');
-        placeholder.innerHTML = ""
+    let timeoutIds = [];
 
-        // Get the image text
-        var dpgotext = document.getElementById("dpgotext");
-        var dpgonftext = document.getElementById("dpgonftext");
-        var qa = imgs.alt.split("[sep]");
-        dpgotext.innerHTML = `Forceful Policy: ${qa[0]} mm`;
-        dpgonftext.innerHTML = `Position-Only Policy: ${qa[1]} mm`;
+    function getConfigKey(view, label) {
+        const map = {
+            "head+world": "3b",
+            "head_wrist+world": "wb_3b",
+            "head+wrist": "3w",
+            "head_wrist+wrist": "ww_3w",
+            "head+aligned": "3w_fa"
+        };
+        return map[`${view}+${label}`];
+    }
 
-        var dpgo = document.getElementById("dpgo");
-        dpgo.innerHTML = "";
-        var dpgonf = document.getElementById("dpgonf");
-        dpgonf.innerHTML = "";
+    function clearDemo() {
+        const video = document.getElementById('demo-video');
+        const expandImg = document.getElementById('expandedImg');
+        const inputImg = document.getElementById('input_image');
+        const spatial = document.getElementById('spatial');
+        const physical = document.getElementById('physical');
 
-        var dpgoVideo = document.createElement("video");
-        dpgoVideo.setAttribute("width", "100%");
-        dpgoVideo.setAttribute("height", "100%");
-        dpgoVideo.setAttribute("autoplay", "true");
-        dpgoVideo.setAttribute("loop", "true");
-        dpgoVideo.setAttribute("muted", "true");
+        timeoutIds.forEach(clearTimeout);
+        timeoutIds = [];
 
-        var dpgoSource = document.createElement("source");
-        dpgoSource.setAttribute("src", imgs.src.replace(".png", "-go.mp4"));
-        dpgoSource.setAttribute("type", "video/mp4");
+        expandImg.src = "";
+        video.load(); // forces video to clear
+        video.style.display = "none";
+        inputImg.src = "";
+        spatial.innerHTML = "";
+        physical.innerHTML = "";
+    }
 
-        dpgoVideo.appendChild(dpgoSource);
-        dpgo.appendChild(dpgoVideo);
+    function updateConfigOptions() {
+        const view = document.getElementById("viewSelect").value;
+        const label = document.getElementById("labelSelect").value;
 
-        var dpgonfVideo = document.createElement("video");
-        dpgonfVideo.setAttribute("width", "100%");
-        dpgonfVideo.setAttribute("height", "100%");
-        dpgonfVideo.setAttribute("autoplay", "true");
-        dpgonfVideo.setAttribute("loop", "true");
-        dpgonfVideo.setAttribute("muted", "true");
+        // Gray out invalid view options
+        const validCombos = {
+            "aligned": ["head"],
+            "wrist": ["head", "head_wrist"],
+            "world": ["head", "head_wrist"]
+        };
 
-        // Create a source element for dpgonf video
-        var dpgonfSource = document.createElement("source");
-        dpgonfSource.setAttribute("src", imgs.src.replace(".png", "-gonf.mp4"));
-        dpgonfSource.setAttribute("type", "video/mp4");
+        for (const option of document.getElementById("viewSelect").options) {
+            option.disabled = !validCombos[label].includes(option.value);
+        }
 
-        // Append the source to the dpgonf video
-        dpgonfVideo.appendChild(dpgonfSource);
-        dpgonf.appendChild(dpgonfVideo);
+        // Force valid selection if needed
+        if (!validCombos[label].includes(view)) {
+            document.getElementById("viewSelect").value = validCombos[label][0];
+        }
 
-        
-        // Use the value of the alt attribute of the clickable image as text inside the expanded image
-        // Show the container element (hidden with CSS)
-        expandImg.parentElement.style.display = "block";
+        // Dim and disable humanoid tasks if config != "3b"
+        const configKey = getConfigKey(document.getElementById("viewSelect").value, label);
+        const is3b = configKey === "3b";
+
+        document.getElementById("humanoid_empty").classList.toggle("dimmed", !is3b);
+        document.getElementById("humanoid_heavy").classList.toggle("dimmed", !is3b);
+
+        clearDemo();
     }
 
     function populateDemo(imgs) {
+        const view = document.getElementById("viewSelect").value;
+        const label = document.getElementById("labelSelect").value;
+        const result = document.getElementById("resultSelect").value;
+
+        const config = getConfigKey(view, label); // e.g., "3b"
+        const taskName = imgs.src.split("/").pop().replace(".png", ""); // e.g., "close_case"
+        const suffix = result === "fail" ? "_fail" : ""; // e.g., "_fail" or ""
+
+        const base = `videos/${config}/${taskName}`; // Now includes task subdir
+        const videoPath = `${base}/${taskName}${suffix}.mp4`;
+        const imgPath = `${base}/${taskName}_input${suffix}.png`;
+        const spatialPath = `${base}/${taskName}_spatial${suffix}.txt`;
+        const physicalPath = `${base}/${taskName}_physical${suffix}.txt`;
+
+        const expandImg = document.getElementById("expandedImg");
+        const video = document.getElementById('demo-video');
+        expandImg.src = videoPath;
+        video.style.display = "block";
+        video.pause();
+        video.load();
+        video.play();
+        video.removeAttribute('controls');
+
+        // Update input image
+        document.getElementById("input_image").src = imgPath;
+
+        // Clear old reasoning text and timeouts
+        timeoutIds.forEach(clearTimeout);
+        timeoutIds = [];
+        document.getElementById("spatial").innerHTML = "";
+        document.getElementById("physical").innerHTML = "";
+
+        // Fetch and typewrite new content
+        fetch(spatialPath)
+            .then(resp => {
+                if (!resp.ok) throw new Error(`Failed to load: ${spatialPath}`);
+                return resp.text();
+            })
+            .then(txt => typeWriter(txt, 0, "spatial"))
+            .catch(err => console.error(err));
+
+        fetch(physicalPath)
+            .then(resp => {
+                if (!resp.ok) throw new Error(`Failed to load: ${physicalPath}`);
+                return resp.text();
+            })
+            .then(txt => typeWriter(txt, 0, "physical"))
+            .catch(err => console.error(err));
+    }
+
+    function typeWriter(txt, i, targetId) {
+        const target = document.getElementById(targetId);
+
+        if (i < txt.length) {
+            const char = txt.charAt(i);
+            target.innerHTML += (char === "\\") ? "\n" : char;
+            timeoutIds.push(setTimeout(() => typeWriter(txt, i + 1, targetId), 5));
+        } else {
+            hljs.highlightAll();
+        }
+    }
+
+    function populateDemo_dg(imgs) {
         // Get the expanded image
         var expandImg = document.getElementById("expandedImg");
         // Get the image text
@@ -584,7 +730,7 @@
     }
 
     // function typeWriter(div, txt, i, q) {
-    function typeWriter(txt, i, q) {
+    function typeWriter_dg(txt, i, q) {
         var imgText = document.getElementById("imgtext");
         if (imgText.innerHTML == q) {
             if (i < txt.length) {
@@ -623,8 +769,9 @@
             el.appendChild(cloneChild.children[0])
             next = next.nextElementSibling
         }
-})
+    })
 
+     window.addEventListener('DOMContentLoaded', updateConfigOptions);
 </script>
 </html>
 
