@@ -296,7 +296,8 @@
           </select>
         </div>
         <div class="col-md-4"></div>
-    </div>      
+    </div>
+    <br>
     <div class="row" id="demo">
     <div class="col-md-1"></div>
     <div class="col-md-10 col-xs-12">
@@ -337,6 +338,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col">
+                        Input Labeled Image:
                         <img id="input_image" src="" height="10%">
                     </div>
                 </div>
@@ -603,8 +605,8 @@
         video.load(); // forces video to clear
         video.style.display = "none";
         inputImg.src = "";
-        spatial.innerHTML = "";
-        physical.innerHTML = "";
+        spatial.innerHTML = "Spatial reasoning";
+        physical.innerHTML = "Physical reasoning";
     }
 
     function updateConfigOptions() {
@@ -644,13 +646,14 @@
 
         const config = getConfigKey(view, label); // e.g., "3b"
         const taskName = imgs.src.split("/").pop().replace(".png", ""); // e.g., "close_case"
-        const suffix = result === "fail" ? "_fail" : ""; // e.g., "_fail" or ""
 
-        const base = `videos/${config}/${taskName}`; // Now includes task subdir
-        const videoPath = `${base}/${taskName}${suffix}.mp4`;
-        const imgPath = `${base}/${taskName}_input${suffix}.png`;
-        const spatialPath = `${base}/${taskName}_spatial${suffix}.txt`;
-        const physicalPath = `${base}/${taskName}_physical${suffix}.txt`;
+        const resultFolder = result === "fail" ? "failure" : "success";
+        const base = `videos/${config}/${taskName}/${resultFolder}`;
+        const videoPath = `${base}/video.mp4`;
+        const imgPath = `${base}/input.png`;
+        const spatialPath = `${base}/spatial.txt`;
+        const physicalPath = `${base}/physical.txt`;
+
 
         const expandImg = document.getElementById("expandedImg");
         const video = document.getElementById('demo-video');
