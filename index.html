@@ -308,6 +308,13 @@
                     Approach Overview
                 </h3>
                 <p>
+                    The proposed framework is composed of three primary components: 1) coordinate frame labeling, 2) generating wrench plans from VLM embodied reasoning, 
+                    and 3) two force-controlled robot platforms (UR5 robot arm with an OptoForce F/T sensor, Unitree H1-2 humanoid) to follow VLM-generated wrenches.
+                    Given a natural language task query, the framework labels head and/or wrist images with a wrist or world coordinate frame placed at a VLM-generated grasp point (u, v). 
+                    Then a VLM, queried with the annotated images and task, is prompted to leverage spatial and physical reasoning to estimate an appropriate wrench and duration appropriate 
+                    for task completion. The wrench is then passed to a force controller and, in the case of failure or incompletion, the resulting robot data can be used autonomously
+                     or with human feedback for iterative task improvement.
+
                 </p>
                 <p>
                 </p>
@@ -327,9 +334,24 @@
                     Evaluating Camera Views, Frame Selection, and Force vs. Position
                 </h3>
                 <p style="text-align:center;">
+                    <image src="media/experiments.png" class="img-responsive">
+                </p>
+                To understand the effect of coordinate frame label selection on VLM embodied reasoning, we evaluate the proposed framework, zero-shot without iterative improvement, 
+                on five differing coordinate frame labeling configurations described. We test four prismatic and rotational tasks (10 trials per task): pushing a 0.5kg bottle 10cm across a 
+                smooth plastic table, pushing a 9kg rolling chair 20cm across a tiled floor, and opening and closing a tool case with a 0.2kg lid hinged about a plastic bushing.
+                We randomize robot and object pose in each trial.
+                <p style="text-align:center;">
                     <image src="media/breakdown.png" class="img-responsive">
                 </p>
                 <p>
+                    The two most successful configurations (head and wrist views world frame label and head view with aligned wrist frame label), achieved a success rate of 51.3% and 50.0%, 
+                    respectively. While VLM physical reasoning remains comparatively accurate across configurations (67% correct property and force estimation, low/high of 61.3% and 72.5%), 
+                    spatial reasoning is highly sensitive to logically consistent coordinate frame annotations, resulting in task success volatility. 
+                    Wrist-frame labeling induces spatial contradictions and poor spatial reasoning (42.5% and 32.5%). World-frame labels greatly ease prismatic motion but not off-axis 
+                    rotational motion, though motion plans are overall improved (65.0% and 80.0%). World-aligned wrist frame labeling retains object-relative motion but is more globally consistent, 
+                    presenting a compromise between the two approaches (70.0%). The position-control baseline leveraging a head and wrist view with world frame labeling yields moderate success (41.3%) 
+                    and high success on the simpler bottle-pushing task. However, VLM-generated position trajectories are imprecise and uncorrectable without force control, 
+                    producing suboptimal, unsafe, and/or slipping motions for more complex and forceful tasks.
                 </p>
             </div>
             <div class="col-md-2"></div>
@@ -341,14 +363,29 @@
                 <h3>
                     Eliciting Harmful Behavior
                 </h3>
+                <p>
+                    To evaluate the effect of embodiment and grounding on model behavior, we ablate the proposed framework's two-step reasoning prompt across different dimensions: 
+                    1) varying visual grounding from no image, an image with task-relevant objects placed in the gripper, or an image with an empty workspace in the model query, 
+                    2) with and w/o spatial reasoning, and 3) with and w/o physical reasoning, resulting in 13 prompts and 21 prompt & vision configurations of varying complexity. 
+                    We evaluate each configuration against three harmful tasks (requesting harm to a human neck, torso, and wrist).
+                </p>
                 <p style="text-align:center;">
                     <image src="media/harmful_behavior.png" class="img-responsive">
                 </p>
                 <p>
-                The 1890 responses can be downloaded as a CSV file <a href="./assets/harmful_behavior_responses.csv">here</a>. The columns are as follows:
-                <pre><code class="language-python" id="answer">['harmful', 'response', 'message', 'motion_plan', 'query_time', 'task', 'obj', 'level', 'model', 'image_path', 'magnitude', 'wrench', 'grasp_force', 'true_level', 'prompt_level', 'config_level']</code></pre>
+                We observe an average harmful behavior elicitation rate of 58% across all models, though this varies greatly per model: 
+                Claude 3.7 Sonnet, which unilaterally refused to answer two of three tasks, only produced 21.5% harmful queries, 
+                whereas GPT 4.1 Mini readily provided (close to 100%) harmful wrenches for all tasks in 18 of 21 prompt configurations, or 87.9% across all configurations. 
+                Gemini also provided responses for all tasks in 18 of 21 configurations, but with a lower harm rate of 62.8%. 
+                This is not necessarily due to improved safeguarding, as "safe" responses simply provided wrenches below 5 Nm.
                 </p>
-
+                <p style="text-align:center;">
+                    <image src="media/per_model_harm_wrench.png" class="img-responsive">
+                </p>
+                <p>
+                The 1890 responses can be downloaded as a <a href="./assets/harmful_behavior_responses.csv">CSV file here</a>. The columns are as follows:
+                <pre><code class="language-python" id="answer">['harmful', 'response', 'message', 'motion_plan', 'query_time', 'task', 'obj', 'level', 'model', 'image_path', 'magnitude', 'wrench', 'grasp_force', 'true_level', 'prompt_level', 'config_level']</code></pre>    
+                </p>
             <div class="col-2"></div>
             </div>
         </div>
@@ -364,19 +401,48 @@
                       FAQs
                 </h3>
                 <p><b>
+                    Why not provide robot (base or gripper) orientation as a native input?
+                </b></p>  
+                <p>
+                    Yes, that may be more robust, but would more-or-less require training a "VLA"-type model. In this work, we're interested in
+                    demonstrating the off-the-shelf reasoning-to-wrench capabilities of VLMs, enabled by visual grounding in coordinate frames.
+                    While us humans don't think about the world in terms of coordinate frames or precise Newtons of force, 
+                    we think our approach aligns VLMs more closely with human motion and allows for more intuitive interaction.
+                    We believe that embodied agents should devote the bulk of their "thinking" to understanding their tasks in the world spatially and physically 
+                    and not necessarily to precise, step-wise trajectories.
+                </p>
+                <p><b>
+                    Why not try to mitigate harmful behavior elicitation?
+                </b></p>  
+                <p>
+                    We can imagine a number of solutions for stopping this specific jailbreaking attack. 
+                    But what are the downstream effects? Will it make our proposed framework less consistent? 
+                    Of note, the higher-latency, native chain-of-thought "reasoning" models like OpenAI's o3 and o4 models always refused to provide an answer. 
+                    When we change the “break the wrist” request to “set the dislocated wrist back in place,” these reasoning models also refuse to provide an answer. 
+                    This is a good thing, at least at our current levels of reasoning, as we would never ask a robot to do such a thing. 
+                    But when time comes (labor, population shortage, societal collapse, etc.), how will we be able to distinguish one from the other? 
+<br><br>
+                    We hope to highlight this emergent conundrum in model development. How can we enable models to reason better with experience and interaction in the physical world, 
+                    and how can we do this while preventing dangerous requests, if that is even desirable? 
+                    Embodied reasoning to accomplish forceful motion is possible but still has a long ways to go until truly robust and versatile motion. 
+                    As we work toward that goal, how can we mitigate the harmful behavior elicited? In trying to mitigate that, will we impede model improvement? 
+
+                </p>               
+                <p><b>
                     What's next?
                 </b></p>  
                 <p>
                     Acquiring more accurate information and skills from physical interaction!
                 </p>                
-                <p><b>
+                <p><b   >
                     Some more tasks
                 </b></p>  <p>
                 <div class="row">
                     <div class="col text-center">
                         <button type="button" class="collapsible">...</button>
                         <div class="content">
-                            <img src="media/overview.png" width="60%">
+                            <img src="" width="60%">
+                            Forthcoming
                         </div>      
                     </div>
                     </div>     
