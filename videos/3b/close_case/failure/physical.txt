@@ -1,7 +1,5 @@
-physicalphysicalphysical
-
-physicalphysicalphysical
-physicalphysicalphysical
-
-physicalphysicalphysical
-physicalphysicalphysical
+Mass of the case m = 0.5 kg, acceleration due to gravity g = 9.81 m/s^2, static friction coefficient between the gripper and handle mu = 0.4. 
+Assume the hinge provides a constant torque resistance of 0.2 Nm. - Relevant equations: F_grasp >= (m*g)/mu, Torque = Force * distance.
+Assuming the distance from the handle to the hinge is roughly 0.1 m, Force = Torque / distance = 0.2 Nm / 0.1 m = 2 N.
+T = 3s, Grasp = 25N
+W = [0.0, -3.0, -7.0, -0.2, 0.0, 0.0]
