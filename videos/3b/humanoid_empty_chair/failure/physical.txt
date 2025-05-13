@@ -1,1 +1,4 @@
-# Placeholder for push_bottle_physical_fail.txt
+Chair mass m = 10 kg, friction between gripper and back of chair = 0.4, coefficient of rolling friction mu = 0.1.
+Computations: Assume a desired acceleration of a = 0.2 m/s^2. Then F = 10 kg * 0.2 m/s^2 = 2 N.
+T = 2s, Grasp = 15N
+W = [2.0, 0.0, 0.0, 0.0, 0.0, 0.0]

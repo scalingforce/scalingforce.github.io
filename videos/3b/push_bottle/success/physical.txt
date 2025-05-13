@@ -1,1 +1,4 @@
-# Placeholder for push_bottle_physical.txt
+Mass of the bottle = 0.5 kg, static friction coefficient between the gripper and handle = 0.6, surface friction = 0.4
+Horizontal Force to Overcome Friction: F_friction = mu_bt * F_normal = mu_bt * (m * g) = 0.4 * 0.5 kg * 9.81 m/s^2 = 1.962 N. Grasping force computations: F_grasp = (m * g) / mu = (0.5 * 9.81) / 0.6 = 8.175 N
+T = 2s, Grasp = 8.2N
+W = [0.0, 2.5, 0.0, 0.0, 0.0, 0.0]

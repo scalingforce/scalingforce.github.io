@@ -1,1 +1,1 @@
-# Placeholder for push_bottle_spatial_fail.txt
+To complete the task, the object in the image should have backward linear motion along the Y-axis, -0.5 meters.

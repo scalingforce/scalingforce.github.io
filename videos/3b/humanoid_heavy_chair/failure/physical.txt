@@ -1,1 +1,4 @@
-# Placeholder for push_bottle_physical_fail.txt
+Mass of the chair and person = 70kg kg, static friction coefficient between the gripper and back of the chair = 0.5, surface friction = 0.2, desired acceleration (a) = 0.04 m/s^2
+The static frictional force from the chair wheels on the ground is Ff = 0.2 * 70 * 9.81 = 137.34 N. The force to achieve the desired acceleration is Fa = 70 * 0.04 = 2.8 N. Total pushing force needed is Ff + Fa = 137.34 + 2.8 = 140.14 N.
+T = 5s, Grasp = 35N
+W = [140.14, 0, 0, 0, 0, 0]

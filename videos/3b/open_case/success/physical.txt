@@ -1,1 +1,4 @@
-# Placeholder for open_case_physical.txt
+Mass of the case = 1.0 kg, static friction coefficient between the gripper and handle mu = 0.4, hinge resistance torque (τ_hinge) = 0.2 Nm
+F_g = 1 kg * 9.81 m/s^2 = 9.81 N - F_z = 1 kg * 0.5 m/s^2 + 9.81 N = 10.31 N (upward force). F_friction = mu_s * F_normal = 0.4 * 9.81 N = 3.92 N. Since the motion along Y axis is very small, we can ignore this frictional force.
+T = 3s, Grasp = 25N
+W = [0.0, -1.0, 10.31, 0.2, 0.0, 0.0]

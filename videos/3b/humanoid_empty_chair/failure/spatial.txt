@@ -1,1 +1,1 @@
-# Placeholder for push_bottle_spatial_fail.txt
+To complete the task, the object in the image should have forward linear motion along the X-axis, 0.5 meters.

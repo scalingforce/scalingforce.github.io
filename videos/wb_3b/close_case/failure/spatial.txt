@@ -1,1 +1,2 @@
-# Placeholder for close_case_spatial_fail.txt
+The lid should move downward along the Z-axis, -0.05 meters, no linear motion along the X-axis, and backward along the Y-axis, -0.1 meters. 
+Overall, the lid must be moved downward and slightly backward to close the case.

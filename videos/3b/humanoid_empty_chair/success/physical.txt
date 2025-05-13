@@ -1,1 +1,4 @@
-# Placeholder for push_bottle_physical_fail.txt
+Chair mass m = 10 kg, friction between gripper and back of chair = 0.3, coefficient of rolling friction mu = 0.2.
+F_friction = 0.2 * 10 kg * 9.81 m/s^2 = 19.62 N
+T = 5s, Grasp = 32N
+W = [0.0, 25.0, 0.0, 0.0, 0.0, 0.0]

@@ -1,1 +1,4 @@
-# Placeholder for push_bottle_physical_fail.txt
+Mass of the chair and person = 80kg kg, static friction coefficient between the gripper and back of the chair = 0.5, surface friction = 0.3, desired acceleration (a) = 0.1 m/s^2, rolling resistance coefficient (mu_r) = 0.02
+Force to overcome rolling resistance: F_rolling = 0.02 * 80 kg * 9.81 m/s^2 = 15.696 N - Force to accelerate the chair: F_acceleration = 80 kg * 0.1 m/s^2 = 8 N - Total pushing force: F_push = 15.696 N + 8 N = 23.696 N
+T = 5s, Grasp = 35N
+W = [0.0, 23.7, 0.0, 0.0, 0.0, 0.0]

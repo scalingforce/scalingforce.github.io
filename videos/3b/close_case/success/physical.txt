@@ -1,4 +1,4 @@
-Mass of the case m = 0.2 kg, acceleration due to gravity g = 9.81 m/s^2, static friction coefficient between the gripper and handle mu = 0.4. 
+Mass of the case = 0.2 kg, static friction coefficient between the gripper and handle mu = 0.4. 
 Assume the hinge provides a constant torque resistance of 0.2 Nm. The normal force (N) is approximately equal to the weight of the lid, N = m*g = 0.2 kg * 9.81 m/s^2 = 1.962 N. The force required to overcome static friction would be Ff = 0.4 * 1.962 N = 0.785 N.
 T = 4s, Grasp = 7.5N
 W = [0.0, 1.0, -1.0, -0.2, 0.0, 0.0]

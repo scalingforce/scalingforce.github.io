@@ -1,1 +1,4 @@
-# Placeholder for push_bottle_physical_fail.txt
+Mass of the bottle = 0.1 kg, static friction coefficient between the gripper and handle mu = 0.3, surface friction = 0.4
+Additional downward force might be required to maintain contact.  F_gravity = m * g = 0.1 kg * 9.81 m/s^2 = 0.981 N.
+T = 2s, Grasp = 3.5N
+W = [0.0, 0.5, -0.981, 0.0, 0.0, 0.0]

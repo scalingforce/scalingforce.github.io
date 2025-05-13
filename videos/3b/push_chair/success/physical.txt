@@ -1,1 +1,4 @@
-# Placeholder for push_chair_physical.txt
+Mass of the chair = 10kg kg, static friction coefficient between the gripper and back of the chair = 0.5, surface friction = 0.3
+Computations: 1. Assume a desired time (t) of 2 seconds for the push. 2. Calculate the required acceleration (a): dy = 0.5 * a * t^2 => 0.2 = 0.5 * a * 2^2 => a = 0.1 m/s^2. 3. Calculate the force required to accelerate the chair (F = m * a): F = 10 * 0.1 = 1 N. 4. Estimate the rolling resistance as a fraction (e.g., 0.1) of the weight: F_rolling = 0.1 * m * g = 0.1 * 10 * 9.81 = 9.81 N. 5. Calculate the total force required (F_total = F + F_rolling): F_total = 1 + 9.81 = 10.81 N. We will round this up to 11N for extra margin of safety, with 0.5N of downward force along the Z-axis.
+T = 2s, Grasp = 32N
+W = [0.0, 11.0, -0.5, 0.0, 0.0, 0.0]

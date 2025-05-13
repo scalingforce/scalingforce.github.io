@@ -1,1 +1,2 @@
-# Placeholder for open_case_spatial.txt
+The lid should move upward along the Z-axis, 0.15 meters, no linear motion along the X-axis, and backward along the Y-axis, -0.05 meters. 
+Overall, the lid must be moved upward and slightly backward to close the case.

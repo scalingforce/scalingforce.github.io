@@ -1,1 +1,4 @@
-# Placeholder for push_chair_physical_fail.txt
+Mass of the chair = 10kg kg, static friction coefficient between the gripper and back of the chair = 0.5, surface friction = 0.4
+Calculate force required to overcome friction: F = 10 kg * 0.016 m/s^2 = 0.16 N 3. Additional force may be required to initiate motion. Estimate peak acceleration as roughly 10x the calculated constant acceleration, or 0.16 m/s^2. This would correspond to roughly 1.6 N peak pushing force, with downward force along the Z-axis with magnitude 1.0 N
+T = 5s, Grasp = 35N
+W = [0.0, 1.6, -1.0, 0.0, 0.0, 0.0]
