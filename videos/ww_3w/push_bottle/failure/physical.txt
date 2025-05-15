@@ -1,1 +1,5 @@
-# Placeholder for push_bottle_physical_fail.txt
+Bottle mass (m = 0.5 kg), Static friction coefficient between bottle and table (μ = 0.3), Acceleration due to gravity (g = 9.81 m/s^2). - Relevant equations: F_friction = μ * F_normal, F_normal = m * g
+Relevant assumptions: The bottle is pushed at a constant speed. Air resistance is negligible. The center of mass of the bottle is located at its geometric center.
+Computations: F_normal = 0.5 kg * 9.81 m/s^2 = 4.905 N, F_friction = 0.3 * 4.905 N = 1.4715 N 
+T = 2s, Grasp = 7.5N
+W = [-2.0, 0.0, 0.0, 0.0, 0.0, 0.0]

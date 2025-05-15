@@ -1,1 +1,5 @@
-# Placeholder for open_case_physical.txt
+Relevant quantities and estimates: Mass of the case m = 2.0 kg, gravity g = 9.81 m/s^2, lifting distance d = 0.1 m, latch pulling distance d_z = 0.02m, time t = 2s. - Relevant equations: F = ma, Torque = Force * distance.
+Relevant assumptions: The acceleration is constant during the motion. The force required to overcome the hinge resistance is small compared to the lifting force.
+Computations: The lifting force required is approximately F = mg = 2.0 * 9.81 = 19.62 N. This must be applied along the X axis. A slight pulling force may also be needed, F_z.
+T = 3s, Grasp = 7.5N
+W = [-19.62, 0.0, 2.0, 0.0, 1.0, 0.0]

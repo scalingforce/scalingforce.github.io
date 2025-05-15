@@ -1,1 +1,5 @@
-# Placeholder for close_case_physical.txt
+Relevant quantities and estimates: Mass of the case = 1 kg, estimated distance from hinge to handle (moment arm) = 0.1 m. Estimated force needed to overcome hinge resistance = 5 N at the handle location, Static Friction coefficient = 0.3
+Relevant equations: Torque = Force x Distance. Frictional Force = coefficient of friction * Normal Force. - Relevant assumptions: Hinge resistance is constant throughout the motion. 
+Computations: * Torque required at the hinge = 5N * 0.1m = 0.5 Nm. * Force required at the handle to close = 5 N
+T = 2s, Grasp = 7.5N
+W = [-5.0, 0.0, 0.0, 0.0, 0.5, 0.0]

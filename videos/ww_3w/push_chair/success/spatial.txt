@@ -1,1 +1,3 @@
-# Placeholder for push_chair_spatial.txt
+The environment is a typical laboratory or office space. The task involves grasping the chair's back and pushing it forward by 20cm. 
+To accomplish the task in the wrist frame, the object must be moved 0.2 meters along the wrist's positive X-axis, while maintaining the same Y and Z coordinates.
+Wrist Motion = [0.2, 0.0, 0.0]

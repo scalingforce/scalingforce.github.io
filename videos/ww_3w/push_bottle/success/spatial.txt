@@ -1,1 +1,5 @@
-# Placeholder for push_bottle_spatial.txt
+The task is to push the bottle forward 10 cm, requiring the robot to apply a pushing force in the forward direction while maintaining a stable grasp on the bottle.
+Based off knowledge of the task and motion, in the wrist X-axis, the object must have no motion with magnitude 0.0 m, because no vertical motion is required to push the bottle forward. The green axis in the left image represents wrist Y-axis motion. It roughly corresponds to motion to the left in the world frame, horizontally. Based off knowledge of the task and motion, in the wrist Y-axis, the object must have negative motion with magnitude 0.1 m, because the bottle must be pushed forward by 10cm and forward motion in the world corresponds to negative motion in the wrist Y-axis. The blue axis in the left image represents wrist Z-axis motion. It roughly corresponds to motion toward the back of the image, which is horizontally to the right in the world frame. Based off knowledge of the task and motion, in the wrist Z-axis, the object must have no motion with magnitude 0.0 m, because no sideways motion is required to push the bottle forward.
+No changes from wrist view.
+To accomplish the task in the wrist frame, the object must be moved 10 cm in the negative Y direction.
+Wrist Motion = [0.0, -0.1, 0.0]

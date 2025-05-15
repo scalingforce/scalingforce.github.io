@@ -1,1 +1,5 @@
-# Placeholder for push_chair_physical_fail.txt
+Relevant quantities and estimates: Mass of chair (m) = 15 kg, desired acceleration (a) = 0.04 m/s^2 (0.2 m in 5 seconds), coefficient of static friction (μ) = 0.3. - Relevant equations: F = ma, F_friction = μmg.
+Relevant assumptions: The chair's mass is evenly distributed. The floor is flat and provides uniform friction. The chair accelerates uniformly.
+Computations: - Desired acceleration (a) = 2 * distance / time^2 = 2 * 0.2 m / (5 s)^2 = 0.016 m/s^2 - Force to overcome static friction ≈ μmg = 0.3 * 15 kg * 9.81 m/s^2 = 44.145 N - Force to accelerate chair ≈ ma = 15 kg * 0.016 m/s^2 = 0.24 N - Total force = 44.145 N + 0.24 N ≈ 44.385 N
+T = 5s, Grasp = 50N
+W = [44.4, 0.0, 0.0, 0.0, 0.0, 0.0]

@@ -1,1 +1,4 @@
-# Placeholder for close_case_physical_fail.txt
+It has mass 1 kg and, with the robot gripper, has a static friction coefficient of 0.5. - The surface of interaction is the top of the blue case which has a static friction coefficient of 0.4 with the object.
+The handle is approximately 0.15 meters away from the hinge. - Relevant equations: Torque = Force * Distance - Relevant assumptions: The hinge resistance is approximately constant during the motion. The center of mass is directly above the hinge in the initial position. - Computations: The force required to overcome hinge resistance is estimated as Torque / distance.
+T = 5s, Grasp = 7.5N
+W = [-2.0, 3.0, 0.0, 1.0, 0.0, 0.0]

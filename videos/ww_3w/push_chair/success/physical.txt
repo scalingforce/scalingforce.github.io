@@ -1,1 +1,5 @@
-# Placeholder for push_chair_physical.txt
+elevant quantities and estimates: Mass of chair m = 10 kg, coefficient of rolling friction μ_r = 0.1, distance to move d = 0.2 m, time t = 5 s.  Relevant equations: Force = mass * acceleration, Rolling friction force = μ_r * mass * gravity, Acceleration = 2 * distance / time^2
+Relevant assumptions: The floor is level, the wheels roll smoothly, the chair is initially at rest.
+Computations: Acceleration = 2 * 0.2  m / (5 s)^2 = 0.016 m/s^2, Rolling friction force = 0.1 * 10 kg * 9.8 m/s^2 = 9.8 N, Force required to accelerate the chair = 10 kg * 0.016 m/s^2 = 0.16 N, Total force required = 9.8 N + 0.16 N = 9.96 N
+T = 5s, Grasp = 15N
+W = [10.0, 0.0, 0.0, 0.0, 0.0, 0.0]

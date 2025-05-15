@@ -1,1 +1,5 @@
-# Placeholder for push_bottle_physical.txt
+Relevant quantities and estimates: mass (m) = 0.2 kg, static friction coefficient (μ) = 0.3, acceleration (a) = 0.05 m/s^2 (0.1 m / 2 s). - Relevant equations: F = ma, F_friction = μ * F_normal, where F is the force.
+Relevant assumptions: Assume the bottle is rigid and the surface is flat. We also assume constant acceleration.
+Computations: F = (0.2 kg) * (0.05 m/s^2) = 0.01 N. F_normal is equal to the weight of the bottle, so F_normal = mg = 0.2 kg * 9.81 m/s^2 = 1.962 N. F_friction = 0.3 * 1.962 N = 0.5886 N. The total force required is F_total = F + F_friction = 0.01 N + 0.5886 N = 0.5986 N ≈ 0.6 N.
+T = 2s, Grasp = 6.0N
+W = [-2.0, -0.6, 0.0, 0.0, 0.0, 0.0]
