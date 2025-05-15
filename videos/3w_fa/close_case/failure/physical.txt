@@ -1,1 +1,4 @@
-# Placeholder for close_case_physical_fail.txt
+Relevant quantities and estimates: mass of lid (m) = 0.5 kg, hinge resistance (Rh) equivalent to 0.1 kg at 0.1m
+Computations: Torque to overcome hinge resistance = 0.1 kg * 9.81 m/s^2 * 0.1 m = 0.0981 Nm - Force/torque motion computations with object of mass 0.5 kg and static friction coefficient of 0.4 along the surface: Frictional force (irrelevant as handle doesn't slide), but maintaining grip requires > 0.5 kg * 9.81 m/s^2 = 4.905 N grip force
+T = 2s, Grasp = 6.0N
+W = [-0.1, 0.0, -0.2, 0.0, 0.0, 0.1]

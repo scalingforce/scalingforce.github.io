@@ -1,1 +1,3 @@
-# Placeholder for push_chair_spatial.txt
+The task requires pushing the chair towards the table. The blue axis represents wrist Z-axis motion. It roughly corresponds to motion vertically in the world frame, with positive Z moving upwards and negative Z moving downwards. Based off knowledge of the task and motion, in the wrist Z-axis, the object must move no displacement to accomplish the task, as the chair is already at the right height. The red axis represents wrist X-axis motion. It roughly corresponds to motion forward and backward relative to the table in the world frame. Positive X moves towards the robot arm and away from the table, and negative X moves away from the robot arm and towards the table.
+To accomplish the task in the wrist frame, the object must be moved primarily along the negative X-axis to push the chair towards the table. Some force may be required along the Z-axis to keep the chair wheels on the ground.
+Wrist Motion = [-0.1, 0.0, 0.0]

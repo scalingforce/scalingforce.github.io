@@ -1,1 +1,4 @@
-# Placeholder for close_case_spatial.txt
+The task requires the robot to close the lid of the case.
+The robot's wrist X-axis points slightly to the left and forward relative to the case. The robot's wrist Y-axis points to the right relative to the case. The robot's wrist Z-axis points upward relative to the case. The blue axis represents wrist Z-axis motion.
+To accomplish the task in the wrist frame, the object must be moved downwards (negative Z), slightly forward and to the right (negative X), with no motion along Y axis to close the lid.
+Wrist Motion = [-0.01, 0, -0.02]

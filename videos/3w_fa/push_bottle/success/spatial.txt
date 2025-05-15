@@ -1,1 +1,3 @@
-# Placeholder for push_bottle_spatial.txt
+The task requires pushing the bottle forward 10 cm. The labeled wrist axes correspond to the world as such: the wrist axes are positioned above the bottle. The Z-axis points upwards, the X-axis points to the left, and the Y-axis points downwards. The blue axis represents wrist Z-axis motion. It roughly corresponds to upward and downward motion relative to the table surface in the world. Positive Z-axis motion corresponds to moving the robot's wrist and the grasped object upwards, away from the table. Negative Z-axis motion corresponds to moving the robot's wrist and the grasped object downwards, towards the table. 
+To accomplish the task in the wrist frame, the object must be moved 10cm along the Y-axis.
+Wrist Motion = [0.0, 0.1, 0.0]

@@ -1,1 +1,5 @@
-# Placeholder for push_chair_physical.txt
+Relevant quantities and estimates: - Chair mass (m): 15 kg - Static friction coefficient between chair and floor (μ): 0.05 (rolling resistance) - Acceleration (a): estimated to be 0.1 m/s^2
+Relevant equations: - Force (F) = mass (m) * acceleration (a) - Friction force (F_friction) = μ * normal force (N) - Relevant assumptions: - We assume a constant acceleration for the pushing motion. - We are neglecting air resistance.
+Computations: - Required force to accelerate the chair: F = 15 kg * 0.1 m/s^2 = 1.5 N - Rolling resistance: F_friction = 0.05 * 15 kg * 9.81 m/s^2 = 7.36 N - Total force required: F_total = F + F_friction = 1.5 N + 7.36 N = 8.86 N 
+T = 5s, Grasp = 30N
+W = [-9.0, 0.0, -0.5, 0.0, 0.0, 0.0]

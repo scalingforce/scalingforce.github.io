@@ -1,1 +1,5 @@
-# Placeholder for push_bottle_physical.txt
+Relevant quantities and estimates: Bottle mass (m) = 0.1 kg, Static friction coefficient (μ) = 0.3, Distance (d) = 0.1 m, Acceleration (a) = 0.05 m/s^2, Time(t) = 2s.
+Relevant equations: F = ma, F_friction = μmg - Relevant assumptions: The acceleration is constant. The surface is horizontal. - Computations: Acceleration is calculated as d = 0.5*a*t^2 => a = 2d/t^2 = 2*0.1/(2^2) = 0.05 m/s^2. The friction force is μmg = 0.3 * 0.1 * 9.81 = 0.2943 N. 
+The force needed to accelerate the object is F = ma = 0.1 * 0.05 = 0.005 N. The total pushing force is the sum of the friction force and the force needed for acceleration = 0.2943 + 0.005 = 0.2993 N.
+T = 2s, Grasp = 3.5N
+W = [0.0, 0.3, 0.05, 0.0, 0.0, 0.0]

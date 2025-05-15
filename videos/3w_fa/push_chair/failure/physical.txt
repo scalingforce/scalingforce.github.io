@@ -1,1 +1,5 @@
-# Placeholder for push_chair_physical_fail.txt
+Relevant quantities and estimates: mass of the chair (m = 10 kg), coefficient of rolling friction (μ_r = 0.02, assuming hard floor), distance to move chair (d = 0.5 m), and task duration (t = 5 s).
+Relevant equations: Force required to overcome rolling resistance: F_roll = μ_r * m * g, where g = 9.81 m/s^2.
+Relevant assumptions: The floor is level, and the chair's wheels are functioning properly. The pushing force is applied horizontally. - Computations: F_roll = 0.02 * 10 kg * 9.81 m/s^2 = 1.962 N.
+T = 5s, Grasp = 25N
+W = [-2.0, 0.0, 0.0, 0.0, 0.0, 0.0]

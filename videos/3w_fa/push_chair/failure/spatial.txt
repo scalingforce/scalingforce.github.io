@@ -1,1 +1,3 @@
-# Placeholder for push_chair_spatial_fail.txt
+The task requires pushing the chair towards the table, implying a change in the chair's position relative to the table. The labeled wrist axes correspond to the world as such: The wrist frame is oriented such that the X-axis points roughly forward from the back of the chair, the Y-axis points to the right, and the Z-axis points upwards. The blue axis represents wrist Z-axis motion. It roughly corresponds to moving the gripper (and grasped chair) vertically up or down in the world.
+To accomplish the task in the wrist frame, the object must be moved along the negative X-axis to push the chair toward the table.
+Wrist Motion = [-0.5, 0.0, 0.0]

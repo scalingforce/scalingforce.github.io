@@ -1,1 +1,3 @@
-# Placeholder for open_case_spatial_fail.txt
+The task involves manipulating the handle to open the case. The labeled wrist axes correspond to the world as such: the positive X-axis points to the left of the image, the positive Y-axis points downward into the image, and the positive Z-axis points towards the top of the image. The red axis represents wrist X-axis motion. It roughly corresponds to motion to the left in the image. Positive X is to the left, negative X is to the right.
+To accomplish the task in the wrist frame, the object must be moved primarily out of the image, with a slight leftward and upward motion.
+Wrist Motion = [-0.01, 0.02, 0.01]

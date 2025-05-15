@@ -1,1 +1,5 @@
-# Placeholder for open_case_physical.txt
+Relevant quantities and estimates: Mass of case = 1 kg, Gravity = 9.81 m/s^2 - Relevant equations: F = ma, Torque = Force * Distance - Relevant assumptions: The mass is evenly distributed. The hinge is frictionless.
+Computations: - Force to lift the case lid: F = mg = 1 * 9.81 = 9.81 N. - Assume the moment arm of the lid is 0.1 meters.
+Torque needed to open lid = F * moment arm = 9.81 N * 0.1m = 0.981 Nm. This assumes no additional hinge friction or stiffness from the case material.
+T = 3s, Grasp = 7.5N
+W = [0, 0, 9.81, 1, 0, 0]

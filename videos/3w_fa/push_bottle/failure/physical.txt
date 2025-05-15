@@ -1,1 +1,4 @@
-# Placeholder for push_bottle_physical_fail.txt
+Relevant quantities and estimates: - Mass of bottle (m): 0.1 kg - Static friction coefficient between bottle and table (μ): 0.3 - Acceleration due to gravity (g): 9.81 m/s^2 - Desired distance (d): 0.1 m - Relevant equations: - Force of friction (Ff) = μ * Normal Force (Fn) - Normal force (Fn) = m * g 
+Relevant assumptions: - The bottle is pushed at a constant speed with minimal acceleration. - The pushing force is applied horizontally. - Computations: - Fn = 0.1 kg * 9.81 m/s^2 = 0.981 N - Ff = 0.3 * 0.981 N = 0.2943 N
+T = 2s, Grasp = 7.5N
+W = [0.0, -0.1, 0.3, 0.0, 0.0, 0.0]

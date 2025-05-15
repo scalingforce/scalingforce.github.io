@@ -1,1 +1,5 @@
-# Placeholder for close_case_physical.txt
+Relevant quantities and estimates: Mass of lid = 0.2 kg, distance from hinge to handle (where force is applied) = 0.1 m, gravitational acceleration = 9.8 m/s^2, angle to close is approximately 45 degrees or pi/4 radians. Assumed Hinge Resistance Torque = 0.1 Nm - Relevant equations: Torque = Force x Distance, Torque_gravity = mass * gravity * distance * cos(angle), Total_Torque = Torque_gravity + Hinge Resistance Torque 
+Relevant assumptions: The lid is treated as a uniform rectangular plate. The hinge resistance is constant. The angle is estimated visually. - Computations: - Torque due to gravity = 0.2 kg * 9.8 m/s^2 * 0.1 m * cos(pi/4) = 0.139 Nm - Total Torque = 0.139 Nm + 0.1 Nm = 0.239 Nm - Approximate force required = Torque / distance = 0.239 Nm / 0.1 m = ~2.4 N 
+Force/torque motion computations with object of mass 0.5 kg and static friction coefficient of 0.4 along the surface: The maximum static friction force = coefficient of friction * normal force = 0.4 * 0.5 kg * 9.8 m/s^2 = 1.96 N.
+T = 2s, Grasp = 7.5N
+W = [-1, 0, -2, -0.24, 0, 0]

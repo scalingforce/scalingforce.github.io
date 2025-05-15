@@ -1,1 +1,3 @@
-# Placeholder for open_case_spatial.txt
+The task involves manipulating the handle to open the case. The labeled wrist axes correspond to the world as such: the wrist X axis points to the left of the image, the wrist Y axis points away from the image, and the wrist Z axis points upwards in the image.
+To accomplish the task in the wrist frame, the object must be moved upwards along the wrist Z-axis to lift open the blue case lid.
+Wrist Motion = [0, 0, 0.1]

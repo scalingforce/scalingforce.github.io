@@ -1,1 +1,3 @@
-# Placeholder for push_bottle_spatial_fail.txt
+The task requires pushing the bottle forward 10 cm. The labeled wrist axes correspond to the world as such: the wrist X-axis points to the left, the wrist Y-axis points downward, and the wrist Z-axis points away. The blue axis represents wrist Z-axis motion. It roughly corresponds to motion away from the robot base.
+To accomplish the task in the wrist frame, the object must be moved positively in the Z direction by 10 cm.
+Wrist Motion = [0, 0, 0.1]
