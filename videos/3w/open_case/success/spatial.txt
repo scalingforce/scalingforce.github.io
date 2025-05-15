@@ -1,1 +1,2 @@
-# Placeholder for open_case_spatial.txt
+The red axis represents wrist X-axis motion. It roughly corresponds to upward motion in the world. Based off knowledge of the task and motion, in the wrist X-axis, the object must move positive. The green axis represents wrist Y-axis motion. It roughly corresponds to right motion in the world. Based off knowledge of the task and motion, in the wrist Y-axis, the object must move no motion required. The blue axis represents wrist Z-axis motion. It roughly corresponds to forward motion in the world. Based off knowledge of the task and motion, in the wrist Z-axis, the object must move no motion required. To accomplish the task in the wrist frame, the object must be moved upward along the X-axis of the wrist.
+Wrist Motion: [1, 0, 0]

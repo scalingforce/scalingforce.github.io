@@ -1,1 +1,5 @@
-# Placeholder for push_chair_physical_fail.txt
+mass of chair m = 10 kg, static friction coefficient chair-floor μ = 0.3, desired acceleration a = 0.1 m/s^2. - Relevant equations: F = ma - Relevant assumptions: The floor is level, and the chair rolls easily. 
+To move the chair with a small acceleration, we apply force F = ma. - F = 10 kg * 0.1 m/s^2 = 1 N - Since there is no rotation, the torques should be near zero. - To overcome friction between the wheels and the floor, F_friction = μ * m * g, where g = 9.8 m/s^2. F_friction = 0.3 * 10 * 9.8 = 29.4 N. The actual static friction is probably lower since this is the static friction of the wheels, which are meant to be rolled. So the force is closer to 1N. - Force/torque motion computations with object of mass 10 kg and static friction coefficient of 0.4 along the surface: F_friction = 0.4 * m * g = 0.4 * 10 * 9.8 = 39.2. 
+The contact is maintained, but since the chair is on wheels the actual friction during the push is quite low.
+T = 5s, Grasp = 15N
+W = [-1.0, 0.0, 0.0, 0.0, 0.0, 0.0]

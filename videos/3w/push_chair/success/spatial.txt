@@ -1,1 +1,3 @@
-# Placeholder for push_chair_spatial.txt
+The objective is to push the chair towards the table until they make contact. The wrist frame is oriented such that its X-axis points roughly forward relative to the chair, the Y-axis points to the robot's right (and slightly upward), and the Z-axis points downward. Therefore, positive X motion at the wrist moves the chair forward, positive Y motion moves it to the right and slightly up, and positive Z motion moves it downward.
+To accomplish the task in the wrist frame, the object must be moved forward along the X-axis to push it towards the table.
+Wrist Motion = [0.5, 0.0, 0.0]

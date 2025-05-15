@@ -1,1 +1,2 @@
-# Placeholder for push_bottle_spatial.txt
+Based off knowledge of the task and motion, in the wrist X-axis, the object must move no distance to accomplish the task. The green axis represents wrist Y-axis motion. It roughly corresponds to motion upward and downward in the world. Based off knowledge of the task and motion, in the wrist Y-axis, the object must move no distance to accomplish the task. The blue axis represents wrist Z-axis motion. It roughly corresponds to forward motion in the world. Based off knowledge of the task and motion, in the wrist Z-axis, the object must move forward 10cm to accomplish the task. To accomplish the task in the wrist frame, the object must be moved 10cm along the wrist's Z-axis.
+Wrist Motion = [0.0, 0.0, 0.1]

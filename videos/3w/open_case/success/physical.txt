@@ -1,1 +1,5 @@
-# Placeholder for open_case_physical.txt
+Minimal force in Y and Z may be required to keep the handle from slipping sideways during the rotational motion. - Motion along axes: The robot exerts motion in a rotational fashion along the wrist's x-axis. - Task duration: The estimated task duration is approximately 3 seconds. Physical Model (if applicable): - Relevant quantities and estimates: Mass of case (m) = 0.5 kg, gravitational acceleration (g) = 9.81 m/s^2. 
+Estimated handle opening resistance torque 0.2 N-m. - Relevant equations: Torque = Force * distance. - Relevant assumptions: Handle has negligible free play. - Computations: - Force/torque motion computations with object of mass 0.5 kg and static friction coefficient of 0.4 along the surface: The opening torque needs to overcome hinge resistance (estimated 0.2 N-m) and the torque required to lift the case. 
+Given the handle is roughly 0.1 m away from the hinge, the initial force to lift the case will be roughly 0.5 kg * 9.81 m/s^2 * 0.1 m = 0.49 N-m. We need to apply roughly 0.49 N-m to overcome gravity. Therefore, the total torque will need to be slightly more than 0.2 N-m + 0.49 N-m = 0.69 N-m to initiate rotation.
+T = 3s, Grasp = 15N
+W = [5, 0, 0, 0.7, 0, 0]

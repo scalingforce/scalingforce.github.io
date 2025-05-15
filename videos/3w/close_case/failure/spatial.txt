@@ -1,1 +1,2 @@
-# Placeholder for close_case_spatial_fail.txt
+To accomplish the task in the wrist frame, the object must be moved a small amount forward. In addition, the end-effector has to rotate to fully close the case
+The lid should move along the X-axis by 0.01m.

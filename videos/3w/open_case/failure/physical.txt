@@ -1,1 +1,4 @@
-# Placeholder for open_case_physical_fail.txt
+Physical Model (if applicable): - Relevant quantities and estimates: Mass of the case (m) = 0.5 kg, approximate distance from hinge to handle (r) = 0.1 m, hinge resistance torque (τ_hinge) = 0.2 Nm. - Relevant equations: Force due to gravity (F_g) = m * g, torque due to gravity (τ_g) = F_g * r, total torque required (τ_total) = τ_g + τ_hinge. - Relevant assumptions: The center of mass of the lid is located approximately 0.1m away from the axis of rotation. The hinge resistance is constant throughout the opening motion.
+Computations: - F_g = 0.5 kg * 9.8 m/s² = 4.9 N - τ_g = 4.9 N * 0.1 m = 0.49 Nm - τ_total = 0.49 Nm + 0.2 Nm = 0.69 Nm
+T = 3s, Grasp = 12.5N
+W = [0.0, 4.9, -1.0, 0.7, 0.0, 0.0]

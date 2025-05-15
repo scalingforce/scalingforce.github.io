@@ -1,1 +1,5 @@
-# Placeholder for push_bottle_physical_fail.txt
+Relevant equations: F_friction = μs * F_normal, F = m * a - Relevant assumptions: The bottle is mostly empty. The table surface is relatively flat and level.
+The robot maintains a constant pushing force. We're ignoring any dynamic friction effects. - Computations: 1. F_normal ≈ m * g = 0.1 kg * 9.81 m/s^2 = 0.981 N 2. F_friction = 0.2 * 0.981 N = 0.1962 N 3. 
+To overcome static friction, the robot needs to apply a force slightly greater than this. I'll estimate 0.3N. - Force/torque motion computations with object of mass 0.1 kg and static friction coefficient of 0.2 along the surface: The robot needs to exert a force slightly greater than the friction force to initiate and maintain motion. F_friction = 0.2 * 0.981 N = 0.1962 N. A pushing force of 0.3 N should be adequate.
+T = 2s, Grasp = 7.5N
+W = [0.0, -0.5, 0.3, 0.0, 0.0, 0.0]

@@ -1,1 +1,3 @@
-# Placeholder for close_case_spatial.txt
+Based off knowledge of the task and motion, in the wrist Z-axis, the object must move to the left as the lid closes towards the base of the case. 
+To accomplish the task in the wrist frame, the object must be moved backward and slightly down and to the left, rotating around the hinge to close the case.
+Wrist Motion: [-0.02, -0.01, -0.01]

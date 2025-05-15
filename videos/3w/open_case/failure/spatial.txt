@@ -1,1 +1,3 @@
-# Placeholder for open_case_spatial_fail.txt
+The red axis represents wrist X-axis motion. It roughly corresponds to motion to the right in the world. Based off knowledge of the task and motion, in the wrist X-axis, the object must move no displacement. The green axis represents wrist Y-axis motion. It roughly corresponds to motion upward in the world. Based off knowledge of the task and motion, in the wrist Y-axis, the object must move upward. The blue axis represents wrist Z-axis motion. It roughly corresponds to motion backward in the world. Based off knowledge of the task and motion, in the wrist Z-axis, the object must move forward, away from the robot. 
+To accomplish the task in the wrist frame, the object must be moved upward and away from the robot, rotating the case around its hinges.
+Wrist Motion = [0.0, 0.05, -0.03]

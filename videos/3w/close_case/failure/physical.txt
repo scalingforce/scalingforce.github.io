@@ -1,1 +1,4 @@
-# Placeholder for close_case_physical_fail.txt
+The relevant object is a blue plastic case with a handle, connected by a hinge that has mass 0.3 kg and, with the robot gripper, has a static friction coefficient of 0.4. - The surface of interaction is the hinge, which has a static friction coefficient of 0.2 with the object.  Radius of rotation at the handle (r) = 0.1 m (estimated), Angle of rotation (theta) = 45 degrees = pi/4 radians (estimated)
+Frictional force = 0.2 * 0.3 kg * 9.81 m/s^2 = 0.5886 N. This is not directly applicable since the friction is primarily in the hinge, but it gives a sense of scale for holding the case.
+T = 3s, Grasp = 2.5N
+W = [0.1, 0.1, 0.0, 0.2, 0.0, 0.0]

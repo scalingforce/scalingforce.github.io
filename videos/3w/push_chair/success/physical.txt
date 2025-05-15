@@ -1,1 +1,5 @@
-# Placeholder for push_chair_physical.txt
+We are only concerned with the initial force to overcome static friction to initiate movement (rolling resistance), which will likely be greater than the force to maintain motion. - Computations: - We need to overcome the rolling resistance of the chair. 
+We can estimate this as a friction force of approximately F_friction = μmg = 0.3 * 10 kg * 9.81 m/s^2 = 29.43 N. We will round this to 30N for initial force. - Once the chair is rolling, a smaller force will be needed to maintain motion but we are controlling by position. 
+Force/torque motion computations with object of mass 10 kg and static friction coefficient of 0.3 along the surface: F_friction = 0.3 * 10 kg * 9.81 m/s^2 = 29.43 N. Rounded to 30N.
+T = 3s, Grasp = 35N
+W = [30.0, 0.0, 0.0, 0.0, 0.0, 0.0]
