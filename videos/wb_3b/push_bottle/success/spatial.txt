@@ -1,1 +1,2 @@
-# Placeholder for push_bottle_spatial.txt
+To accomplish the task in the world frame, the object must be moved 10 cm forward along the Y axis while keeping other axes stationary.
+World Motion = [0.0, 0.1, 0.0]

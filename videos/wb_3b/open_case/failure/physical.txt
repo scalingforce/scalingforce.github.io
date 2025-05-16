@@ -1,1 +1,6 @@
-# Placeholder for open_case_physical_fail.txt
+Relevant quantities and estimates: Mass of the case (m) = 1 kg, gravity (g) = 9.81 m/s^2, estimated hinge resistance torque (Th) = 0.5 N-m. Distance from the handle to the hinge (r) = 0.1 m (estimated from the image). - Relevant equations: Force required to lift the case (F = mg), Torque = Force x distance (T = F x r)
+Relevant assumptions: We assume the hinge resistance is constant and that the mass is evenly distributed. We also assume the handle is a simple lever arm. - Computations: The force required to simply lift the case against gravity would be F = 1 kg * 9.81 m/s^2 = 9.81 N. 
+However, we are not simply lifting the case. We are rotating it open. The torque required at the hinge is estimated to be 0.5 N-m. The distance from the handle to the hinge is approximately 0.1m. 
+Thus, the force required at the handle to overcome the hinge resistance is F = T/r = 0.5 N-m / 0.1 m = 5 N. This force will be distributed along the wrist's X, Y, and Z axes according to the required motion. Force/torque motion computations with object of mass 1 kg and static friction coefficient of 0.6 along the surface: We're assuming we must apply 5N to accomplish the movement in all axes.
+T = 6s, Grasp = 10N
+W = [5, -5, -5, 0, 0.5, 0]

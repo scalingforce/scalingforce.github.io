@@ -1,5 +1,5 @@
-Mass of the case = 0.5 kg, static friction coefficient between the gripper and handle mu = 0.4. 
-Assume the hinge provides a constant torque resistance of 0.2 Nm. - Relevant equations: F_grasp >= (m*g)/mu, Torque = Force * distance.
-Assuming the distance from the handle to the hinge is roughly 0.1 m, Force = Torque / distance = 0.2 Nm / 0.1 m = 2 N.
-T = 3s, Grasp = 25N
-W = [0.0, -3.0, -7.0, -0.2, 0.0, 0.0]
+Relevant quantities and estimates: Case top mass (m) = 0.2 kg, gravitational acceleration (g) = 9.81 m/s^2, hinge rotational stiffness (k) = 0.1 Nm/rad, desired rotation angle (theta) = 90 degrees (1.57 rad), static friction coefficient between gripper and case top = 0.4. - Relevant equations: F_gravity = m * g, Torque_hinge = k * theta
+Relevant assumptions: The case is initially slightly misaligned and needs small linear adjustments before rotation. We assume the hinge rotational stiffness is low. We assume the gripper can exert sufficient force to overcome the gravitational force on the case top and any hinge resistance.
+Computations: - Gravitational force on the case top: F_gravity = 0.2 kg * 9.81 m/s^2 = 1.96 N. - Torque required to overcome hinge stiffness: Torque_hinge = 0.1 Nm/rad * 1.57 rad = 0.157 Nm.
+T = 4s, Grasp = 6.5N
+W = [-0.2, -0.1, -2.0, 0.2, 0.0, 0.0]

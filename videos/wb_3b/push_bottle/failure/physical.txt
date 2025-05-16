@@ -1,1 +1,6 @@
-# Placeholder for push_bottle_physical_fail.txt
+Physical Model Computations: - Relevant quantities and estimates: Bottle mass (m) = 0.5 kg, friction coefficient (μ) = 0.4, distance to push (d) = 0.1 m, gravity (g) = 9.81 m/s^2 - Relevant equations: Friction force (Ff) = μ * Normal force (Fn), Normal force (Fn) = m * g, Force = mass * acceleration
+Relevant assumptions: The surface is level, and the push will be at a constant velocity. We are ignoring air resistance. The primary force to overcome is friction.
+Computations: 1. Normal force (Fn) = 0.5 kg * 9.81 m/s^2 = 4.905 N 2. Friction force (Ff) = 0.4 * 4.905 N = 1.962 N 3. To move at a constant velocity, the applied force must equal the friction force: F_applied = 1.962 N 
+4. To ensure stable motion, apply about 2x the friction force. F_applied = 4.0 N - Force/torque motion computations with object of mass 0.5 kg and static friction coefficient of 0.4 along the surface: The force required to overcome static friction is 1.962 N. Therefore, a force of 4.0 N along the Y-axis should be adequate. We need to maintain a downward force (negative Z) to ensure the bottle doesn't tip, approximately 4.9 N.
+T = 2s, Grasp = 7.5N
+W = [0.0, -4.0, -4.9, 0.0, 0.0, 0.0]

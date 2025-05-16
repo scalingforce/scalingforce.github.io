@@ -1,1 +1,3 @@
-# Placeholder for push_bottle_physical.txt
+Mass of bottle (m) = 0.8 kg, coefficient of static friction (bottle-table) = 0.5 To accomplish the task, using the physical properties, the forces and motion required are: Acceleration required: a = 2 * 0.1 m / (2 s)^2 = 0.05 m/s^2. Force required to overcome static friction: F_friction = 0.5 * 0.8 kg * 9.81 m/s^2 = 3.9 N. Total force required: F = m * a + F_friction = 0.8 kg * 0.05 m/s^2 + 3.9 N = 4.3 N.
+T = 2s, Grasp = 10.0N
+W = [-0.5, 4.3, -1.0, 0.0, 0.0, 0.0]

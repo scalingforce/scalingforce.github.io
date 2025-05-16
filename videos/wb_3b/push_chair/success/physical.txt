@@ -1,1 +1,6 @@
-# Placeholder for push_chair_physical.txt
+ Relevant quantities and estimates: mass of the chair (m = 10 kg), desired displacement (d = 0.2 m), static friction coefficient between the chair and the robot gripper (mu_robot = 0.5), static friction coefficient between the chair wheels and the floor (mu_floor = 0.1), acceleration due to gravity (g = 9.81 m/s^2), and time (t = 2 s).
+ Relevant equations: F = ma, where a = 2d/t^2 (constant acceleration formula), Grasping Force = (m*g)/mu_robot, Friction Force = mu_floor * m * g. - Relevant assumptions: The chair moves with constant acceleration. Rolling resistance is assumed to be negligible compared to static friction. The floor is level.
+ Computations: - Acceleration: a = 2 * 0.2 m / (2 s)^2 = 0.1 m/s^2 - Force to accelerate chair: F = 10 kg * 0.1 m/s^2 = 1 N - Grasping Force: F_grasp = (10 kg * 9.81 m/s^2) / 0.5 = 196.2 N - Friction Force (rolling resistance): F_friction = 0.1 * 10 kg * 9.81 m/s^2 = 9.81 N 
+ Force/torque motion computations with object of mass 10 kg and static friction coefficient of 0.1 along the surface: A force of 1 N is required to push the chair forward. However, friction must also be overcome. Therefore, the total required force is 1N + 9.81 N, which is approximately 10.81 N
+ T = 2s, Grasp = 20.0N
+W = [0.0, 10.81, -1.0, 0.0, 0.0, 0.0]

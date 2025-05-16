@@ -1,1 +1,7 @@
-# Placeholder for open_case_physical.txt
+Relevant quantities and estimates: Mass of case = 0.5 kg. Hinge stiffness = 5 N-m/rad. Desired opening angle = 0.2 rad (approximately 10 degrees). Distance from hinge to handle grasp point, r = 0.15 m. - Relevant equations: Torque = Force * distance. Torque required = Hinge stiffness * angle.
+Relevant assumptions: The hinge can be approximated as a torsional spring. The force is applied perpendicular to the line connecting the hinge and grasp point.
+Computations: Torque required = 5 N-m/rad * 0.2 rad = 1 N-m. Force required = Torque / distance = 1 N-m / 0.15 m = 6.67 N. This force must have components in +Z and -X and +Y axes. 
+Force/torque motion computations with object of mass 0.5 kg and static friction coefficient of 0.5 along the surface: Friction force is equal to mu * normal force, which is 0.4 * 0.5 * 9.81 = 1.962 N. 
+Force/Torque Motion Estimation: Linear X-axis: To complete the task and based upon the hinge torque and pulling up and out on the handle, the object in the image must exert rightward and negative force along the Z-axis with magnitude 3.33 N.
+T = 3s, Grasp = 7.5N
+W = [3.33, 1.0, 5.33, 0.0, 0.0, 1.0]

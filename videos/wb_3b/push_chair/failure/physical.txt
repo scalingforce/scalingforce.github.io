@@ -1,1 +1,6 @@
-# Placeholder for push_chair_physical_fail.txt
+elevant quantities and estimates: Mass of chair (m) = 10 kg, desired displacement (d) = 0.2 m, duration (t) = 2 s, static friction coefficient between chair and floor (mu) = 0.05. - Relevant equations: F = ma, a = 2d/t^2.
+Relevant assumptions: The floor is level. The chair rolls freely. - Computations: - Acceleration (a) = 2 * 0.2 m / (2 s)^2 = 0.1 m/s^2 - Force to accelerate chair (F) = 10 kg * 0.1 m/s^2 = 1 N - Assuming the friction between the wheels and the floor is negligible. 
+Grasping force computations: F_grasp = (m*g)/mu = (10 kg * 9.81 m/s^2) / 0.5 = 196.2 N. Given that we have a firm grasp and the force we are exerting on the chair to move it is relatively small compared to the force required to lift it, we can decrease this by a factor of 10, to 19.62 N. 
+Force/torque motion computations with object of mass 10 kg and static friction coefficient of 0.05 along the surface: F = ma = 1 N.
+T = 2s, Grasp = 20.0N
+W = [0.0, 1.0, 0.0, 0.0, 0.0, 0.0]

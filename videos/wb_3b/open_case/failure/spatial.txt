@@ -1,1 +1,2 @@
-# Placeholder for open_case_spatial_fail.txt
+To accomplish the task in the world frame, the object must be moved upwards along the Z-axis and forward along the Y-axis, which will allow the case to be opened.
+World Motion = [0.0, 0.05, 0.1]

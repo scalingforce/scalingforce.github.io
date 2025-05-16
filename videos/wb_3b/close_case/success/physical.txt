@@ -1,1 +1,5 @@
-# Placeholder for close_case_physical.txt
+Relevant quantities and estimates: Mass of lid (m) = 0.5 kg, Acceleration due to gravity (g) = 9.81 m/s^2, Distance from hinge to point of applied force (r) ≈ 0.2 m - Relevant equations: Torque (τ) = r * F, where F is the applied force and r is the distance from the hinge. F_gravity = m * g 
+Relevant assumptions: We assume that the hinge offers minimal resistance compared to the force required to overcome gravity and inertia. The contact is close to the hinge so a small force should allow closing of the box. 
+Computations: F_gravity = 0.5 kg * 9.81 m/s^2 = 4.905 N. We assume the force is applied at 0.2m radius from the hinge to close it. If that is the case, then the torque exerted by gravity is negligible. Since the lid needs to be rotated around the hinge, we need to consider the torque required to overcome the inertia. Closing the box slowly means the angular acceleration is low and hence little torque will be required.
+T = 4s, Grasp = 7.5N
+W = [0.0, 0.0, -5.0, -1.0, 0.0, 0.0]

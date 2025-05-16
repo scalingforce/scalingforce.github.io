@@ -1,1 +1,2 @@
-# Placeholder for open_case_spatial.txt
+To accomplish the task in the world frame, the object must be moved upward and slightly back and to the right to open the case by rotating around the hinge.
+World Motion = [-0.05, 0.02, 0.1]

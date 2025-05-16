@@ -1,1 +1,2 @@
-# Placeholder for push_chair_spatial_fail.txt
+To accomplish the task in the world frame, the object must be moved forward 20cm along the world's Y-axis while maintaining its Z-axis height and X-axis position.
+World Motion = [0.0, 0.2, 0.0]

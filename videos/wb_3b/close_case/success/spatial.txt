@@ -1,1 +1,2 @@
-# Placeholder for close_case_spatial.txt
+ To accomplish the task in the world frame, the object must be moved downward along the Z-axis until it closes.
+ World Motion = [0.0, 0.0, -0.15]
